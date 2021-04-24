@@ -68,7 +68,35 @@ merged meta-training set using `train_contrastive.py`, then (2) an evaluation se
 the meta-testing stage using `eval_fewshot.py`. Note that we can also apply an optional distillation step after the 
 frist pre-training step with `train_distillation.py`.
 
-### Citation :black_nib:
+#### Other Use Cases
+
+The proposed SCL method can also be used for standard supervised or self-supervised training for image classification.
+For instance, this can be done as follows:
+
+```python
+
+from losses import ContrastiveLoss
+from models.attention import AttentionSimilarity
+
+attention_module = AttentionSimilarity(hidden_size=128)
+const_criterion = ContrastiveLoss(temperature=10) # inverse temp is used
+
+....
+
+features = encoder(inputs)
+
+# supervised case
+loss_contrast = criterion_contrast(features, attention=attention_module, labels=labels)
+
+# unsupervised case
+loss_contrast = criterion_contrast(features, attention=attention_module, labels=None)
+
+....
+
+
+```
+
+### Citation :pencil:
 
 If you find this repo useful for your research, please consider citing the paper as follows:
 
@@ -85,7 +113,7 @@ For any questions, please contact Yassine Ouali.
 
 #### Acknowlegements
 
-* The code structure is based on [RFS](hhttps://github.com/WangYueFt/rfs) repo.
+* The code structure is based on [RFS](https://github.com/WangYueFt/rfs) repo.
 * The cross-domain datasets code is based on [CrossDomainFewShot](https://github.com/hytseng0509/CrossDomainFewShot) repo.
 
 
