@@ -12,7 +12,7 @@ from models import model_dict, model_pool
 from models.contrast import ContrastResNet
 from models.util import create_model, get_teacher_name
 
-from utils import adjust_learning_rate, accuracy, AverageMeter, warmup_learning_rate, write_results, set_seed
+from utils import adjust_learning_rate, accuracy, AverageMeter, warmup_learning_rate, set_seed
 from dataset.loaders import get_train_loaders
 from dataset.transform_cfg import transforms_options, transforms_list
 

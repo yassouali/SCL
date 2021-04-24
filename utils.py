@@ -61,16 +61,6 @@ def accuracy(output, target, topk=(1,)):
         return res
 
 
-def write_results(text, filename="results.txt"):
-    if os.path.exists(filename):
-        append_write = 'a'
-    else:
-        append_write = 'w'
-
-    highscore = open(filename, append_write)
-    highscore.write(text + '\n')
-    highscore.close()
-
 def set_seed(seed=31):
     """
     Set Random Seed
