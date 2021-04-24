@@ -1,12 +1,12 @@
 ## Spatial Contrastive Learning for Few-Shot Classification (SCL)
 
-### [Paper](https://arxiv.org/abs/2012.13831)
+### [Paper](https://arxiv.org/abs/2012.13831) :page_with_curl:
 
 This repo contains the official implementation of Spatial Contrastive Learning for Few-Shot Classification (SCL), which presents
 of a novel contrastive learning method applied to few-shot image classification in order to learn more general purpose embeddings
 and facilitate the test-time adaptation to novel visual categories.
 
-<p align="center"><img src="image/SCL.png" width="700"></p>
+<p align="center"><img src="image/SCL.png" width="600"></p>
 
 ### Highlights
 
@@ -61,12 +61,12 @@ which can be the path as the standard datasets above.
 
 ### Running
 
-To use the proposed method for few-shot classification, there is a two stage approach to follows: (1) training the model on the
+All of the commands necessary to reproduce the results of the paper can be found in `scripts/run.sh`.
+
+In general, to use the proposed method for few-shot classification, there is a two stage approach to follows: (1) training the model on the
 merged meta-training set using `train_contrastive.py`, then (2) an evaluation setting, to evaluate the embedding model on
 the meta-testing stage using `eval_fewshot.py`. Note that we can also apply an optional distillation step after the 
 frist pre-training step with `train_distillation.py`.
-
-**Reproduction:** All of the commands necessary to reproduce the results of the paper can be found in `scripts/run.sh`.
 
 ### Citation
 
