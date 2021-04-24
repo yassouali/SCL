@@ -36,7 +36,7 @@ pip install -r requirements.txt
 
 ### Datasets :minidisc:
 
-#### Standard Few-shot Setting
+#### :arrow_forward: Standard Few-shot Setting
 
 For the standard few-shot experiments, we used ImageNet derivatives: miniImagetNet and tieredImageNet, in addition to CIFAR-100 derivatives: FC100 and CIFAR-FS.
 These datasets are preprocessed by the repo of [MetaOptNet](https://github.com/kjunelee/MetaOptNet), 
@@ -45,7 +45,7 @@ renamed and re-uploaded by [RFS](https://github.com/WangYueFt/rfs) and can be do
 After downloading all of the dataset, and placing them in the same folder which we refer to as `DATA_PATH`, where each
 dataset has its specific folder, eg: `DATA_PATH/FC100`. Then, during training, we can set the training argument `data_root` to `DATA_PATH`.
 
-#### Cross-domain Few-shot Setting
+#### :arrow_forward: Cross-domain Few-shot Setting
 
 In cross-domain setting, we train on miniImageNet but we test on a different dataset. Specifically, we consider 4 datasets: cub, cars, places and plantae.
 All of the datasets can be downloaded as follows:
@@ -68,7 +68,7 @@ merged meta-training set using `train_contrastive.py`, then (2) an evaluation se
 the meta-testing stage using `eval_fewshot.py`. Note that we can also apply an optional distillation step after the 
 first pre-training step using `train_distillation.py`.
 
-#### Other Use Cases
+#### Other Use Cases :new:
 
 The proposed SCL method is not specific to few-shot classification, and can also be used for
 standard supervised or self-supervised training for image classification.
