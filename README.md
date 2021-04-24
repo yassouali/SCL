@@ -84,7 +84,12 @@ contrast_criterion = ContrastiveLoss(temperature=10) # inverse temp is used (0.1
 
 ....
 
-features = encoder(inputs)
+# apply some augmentations
+aug_inputs1, aug_inputs2 = augment(inputs) 
+aug_inputs = torch.cat([aug_inputs1, aug_inputs2], dim=0)
+
+# forward pass
+features = encoder(aug_inputs)
 
 # supervised case
 loss_contrast = contrast_criterion(features, attention=attention_module, labels=labels)
