@@ -6,7 +6,7 @@ This repo contains the official implementation of Spatial Contrastive Learning f
 of a novel contrastive learning method applied to few-shot image classification in order to learn more general purpose embeddings
 and facilitate the test-time adaptation to novel visual categories.
 
-<p align="center"><img src="image/SCL.png" width="600"></p>
+<p align="center"><img src="image/SCL.jpg" width="600"></p>
 
 ### Highlights :fire:
 
@@ -78,18 +78,18 @@ For instance, this can be done as follows:
 from losses import ContrastiveLoss
 from models.attention import AttentionSimilarity
 
-attention_module = AttentionSimilarity(hidden_size=128)
-const_criterion = ContrastiveLoss(temperature=10) # inverse temp is used
+attention_module = AttentionSimilarity(hidden_size=128) # hidden_size depends on the encoder
+contrast_criterion = ContrastiveLoss(temperature=10) # inverse temp is used (0.1)
 
 ....
 
 features = encoder(inputs)
 
 # supervised case
-loss_contrast = criterion_contrast(features, attention=attention_module, labels=labels)
+loss_contrast = contrast_criterion(features, attention=attention_module, labels=labels)
 
 # unsupervised case
-loss_contrast = criterion_contrast(features, attention=attention_module, labels=None)
+loss_contrast = contrast_criterion(features, attention=attention_module, labels=None)
 
 ....
 
