@@ -8,7 +8,7 @@ and facilitate the test-time adaptation to novel visual categories.
 
 <p align="center"><img src="image/SCL.png" width="600"></p>
 
-### Highlights
+### Highlights :fire:
 
 **(1) Contrastive Learning for Few-Shot Classification.** \
 We explore contrastive learning as an auxiliary pre-training objective
@@ -25,7 +25,7 @@ We introduce a novel contrastive distillation objective to reduce the compactnes
 in the embedding space and provide additional refinement of the representations.
 
 
-### Requirements
+### Requirements :wrench:
 
 This repo was tested with CentOS 7.7.1908, Python 3.7.7, PyTorch 1.6.0, and CUDA 10.2. However, we expect that the provided code is compatible with older and newer version alike.
 
@@ -35,7 +35,7 @@ The required packages are `pytorch` and `torchvision`, together with `PIL` and `
 pip install -r requirements.txt
 ```
 
-### Datasets
+### Datasets :minidisc:
 
 #### Standard Few-shot Setting
 
@@ -59,7 +59,7 @@ python download.py DATASET_NAME DATA_PATH
 where `DATASET_NAME` refers to one of the 4 datasets (cub, cars, places and plantae) and `DATA_PATH` the path where the data will be downloaded and saved,
 which can be the path as the standard datasets above.
 
-### Running
+### Running :hourglass:
 
 All of the commands necessary to reproduce the results of the paper can be found in `scripts/run.sh`.
 
@@ -68,7 +68,7 @@ merged meta-training set using `train_contrastive.py`, then (2) an evaluation se
 the meta-testing stage using `eval_fewshot.py`. Note that we can also apply an optional distillation step after the 
 frist pre-training step with `train_distillation.py`.
 
-### Citation
+### Citation :black_nib:
 
 If you find this repo useful for your research, please consider citing the paper as follows:
 
