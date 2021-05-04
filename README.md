@@ -17,7 +17,7 @@ to learn more transferable features and facilitate the test time adaptation for 
 **(2) Spatial Contrastive Learning (SCL).** \
 We propose a novel Spatial Contrastive (SC) loss
 that promotes the encoding of the relevant spatial information into the learned representations,
-and further promotes class-independent discriminative patterns and .
+and further promotes class-independent discriminative patterns.
 
 **(3) Contrastive Distillation for Few-Shot Classification.** \
 We introduce a novel contrastive distillation objective to reduce the compactness of the features
