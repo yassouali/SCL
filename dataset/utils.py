@@ -68,9 +68,6 @@ def get_contrastive_aug(dataset, aug_type="simclr"):
     if dataset == "miniImageNet" or dataset == "tieredImageNet" or dataset == "cross":
         mean, std = MEAN_STD["imagenet"]
         crop_size = 84
-    elif dataset == "cross_large":
-        mean, std = MEAN_STD["mini_large"]
-        crop_size = 224
     elif dataset == "CIFAR-FS" or dataset == "FC100":
         mean, std = MEAN_STD["cifar"]
         crop_size = 32
