@@ -6,7 +6,11 @@ This repo contains the official implementation of Spatial Contrastive Learning f
 of a novel contrastive learning method applied to few-shot image classification in order to learn more general purpose embeddings,
 and facilitate the test-time adaptation to novel visual categories.
 
-<p align="center"><img src="image/SCL.jpg" width="550"></p>
+<p align="center">
+  <a href="https://arxiv.org/abs/2012.13831">
+    <img src="image/SCL.jpg" width="550">
+  </a>
+</p>
 
 ### Highlights :fire:
 
