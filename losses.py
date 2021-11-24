@@ -55,24 +55,29 @@ class ContrastiveLoss(nn.Module):
 
     def forward(self, features_a, features_b=None, labels=None, attention=None):
         device = (torch.device('cuda') if features_a.is_cuda else torch.device('cpu'))
-        batch_size = features_a.shape[0]
+        num_features, num_labels = features_a.shape[0], labels.shape[0]
 
         # using only the current features in a given batch
         if features_b is None:
             features_b = features_a
             # mask to remove self contrasting
-            logits_mask = (1. - torch.eye(batch_size)).to(device)
+            logits_mask = (1. - torch.eye(num_features)).to(device)
         else:
-            logits_mask = torch.ones(batch_size, batch_size).to(device)
-
+            # contrasting different features (a & b), no need to mask the diagonal
+            logits_mask = torch.ones(num_features, num_features).to(device)
+        
+        # mask to only maintain positives
         if labels is None:
-            mask = torch.eye(batch_size // 2, dtype=torch.float32).to(device)
+            # standard self supervised case
+            mask = torch.eye(num_labels, dtype=torch.float32).to(device)
         else:
             labels = labels.contiguous().view(-1, 1)
             mask = torch.eq(labels, labels.T).float().to(device)
 
         # replicate the mask since the labels are just for N examples
-        mask = mask.repeat(2, 2)
+        if num_features != num_labels:
+            assert num_labels * 2 == num_features
+            mask = mask.repeat(2, 2)
 
         # compute logits
         contrast = self._compute_logits(features_a, features_b, attention)
