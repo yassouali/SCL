@@ -3,8 +3,8 @@
 ### [Paper](https://arxiv.org/abs/2012.13831) :page_with_curl:
 
 This repo contains the official implementation of Spatial Contrastive Learning for Few-Shot Classification (SCL), which presents
-of a novel contrastive learning method applied to few-shot image classification in order to learn more general purpose embeddings,
-and facilitate the test-time adaptation to novel visual categories.
+of a novel contrastive learning method applied to few-shot image classification in 
+order to learn more general purpose embeddings, and facilitate the test-time adaptation to novel visual categories.
 
 <p align="center">
   <a href="https://arxiv.org/abs/2012.13831">
