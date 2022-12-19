@@ -15,8 +15,9 @@ and facilitate the test-time adaptation to novel visual categories.
 ### Highlights :fire:
 
 **(1) Contrastive Learning for Few-Shot Classification.** \
-We explore contrastive learning as an auxiliary pre-training objective
-to learn more transferable features and facilitate the test time adaptation for few-shot classification. 
+We explore contrastive learning as an auxiliary pre-training objective to
+learn more transferable features and facilitate the test time adaptation for few-shot 
+classification. 
 
 **(2) Spatial Contrastive Learning (SCL).** \
 We propose a novel Spatial Contrastive (SC) loss
